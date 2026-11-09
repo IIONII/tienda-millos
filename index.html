@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TechMayor | Distribuidora de componentes para PC</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="logo">⚡ Tech<span>Mayor</span></a>
+      <nav class="nav" id="nav">
+        <a href="#catalogo">Catálogo</a>
+        <a href="#distribucion">Distribución</a>
+        <a href="#mayoristas">Mayoristas</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <button class="btn-cart" id="openCart" aria-label="Abrir carrito">🛒 <span id="cartCount">0</span></button>
+      <button class="burger" id="burger" aria-label="Menú">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container hero__inner">
+        <h1>Componentes para PC al por menor y al por mayor</h1>
+        <p>Procesadores, tarjetas gráficas, memorias y más. Envíos a todo el país y precios especiales para distribuidores.</p>
+        <div class="hero__actions">
+          <a href="#catalogo" class="btn">Ver catálogo</a>
+          <a href="#mayoristas" class="btn btn--ghost">Ser distribuidor</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="catalogo">
+      <h2>Catálogo</h2>
+      <div class="toolbar">
+        <input type="search" id="search" placeholder="Buscar producto o marca...">
+        <div class="filters" id="filters"></div>
+      </div>
+      <div class="grid" id="products"></div>
+      <p class="empty" id="empty" hidden>No encontramos productos con ese criterio.</p>
+    </section>
+
+    <section class="section section--alt" id="distribucion">
+      <div class="container">
+        <h2>Distribución</h2>
+        <div class="features">
+          <article class="card"><span>🚚</span><h3>Envíos nacionales</h3><p>Despacho en 24 a 72 horas con guía de seguimiento.</p></article>
+          <article class="card"><span>🛡️</span><h3>Garantía real</h3><p>Productos nuevos, originales y con garantía del fabricante.</p></article>
+          <article class="card"><span>📦</span><h3>Stock permanente</h3><p>Inventario para pedidos por unidad o por lotes.</p></article>
+          <article class="card"><span>💳</span><h3>Pagos flexibles</h3><p>Transferencia, tarjeta o pago contra entrega según zona.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="mayoristas">
+      <div class="wholesale">
+        <div>
+          <h2>Programa para distribuidores</h2>
+          <p>Compra por volumen y obtén descuentos automáticos en el carrito: <strong>5 % desde 5 unidades</strong> y <strong>10 % desde 10 unidades</strong>. Déjanos tus datos y un asesor te contactará con la lista de precios mayorista.</p>
+        </div>
+        <form id="wholesaleForm" novalidate>
+          <input type="text" name="nombre" placeholder="Nombre" required>
+          <input type="text" name="empresa" placeholder="Empresa o negocio" required>
+          <input type="email" name="email" placeholder="Correo electrónico" required>
+          <select name="volumen" required>
+            <option value="">Volumen mensual estimado</option>
+            <option>Menos de 20 unidades</option>
+            <option>20 a 100 unidades</option>
+            <option>Más de 100 unidades</option>
+          </select>
+          <button class="btn" type="submit">Solicitar lista mayorista</button>
+          <p class="form-msg" id="formMsg" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="contacto">
+    <div class="container footer__inner">
+      <div><strong>⚡ TechMayor</strong><p>Distribuidora de componentes de computadores.</p></div>
+      <div><p>📍 Bogotá, Colombia</p><p>📧 ventas@techmayor.co</p><p>📱 +57 300 000 0000</p></div>
+    </div>
+    <p class="copy">© 2026 TechMayor. Todos los derechos reservados.</p>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart" id="cart" aria-label="Carrito de compras">
+    <div class="cart__head"><h3>Tu carrito</h3><button id="closeCart" aria-label="Cerrar">✕</button></div>
+    <div class="cart__items" id="cartItems"></div>
+    <div class="cart__foot">
+      <div class="row"><span>Subtotal</span><span id="subtotal">$0</span></div>
+      <div class="row discount"><span id="discLabel">Descuento</span><span id="discount">-$0</span></div>
+      <div class="row total"><span>Total</span><span id="total">$0</span></div>
+      <button class="btn btn--full" id="checkout">Finalizar pedido por WhatsApp</button>
+      <button class="link" id="clear">Vaciar carrito</button>
+    </div>
+  </aside>
+
+  <script src="app.js"></script>
+</body>
+</html>
